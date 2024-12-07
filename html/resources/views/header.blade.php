@@ -14,10 +14,6 @@
             </a>
         </div>
     </nav>
-    
-    <div class="container mt-4">
-        <p style="text-align: justify; margin-left: auto; margin-right: auto; width: 80%;">A nossa <strong>Central de Contactos</strong> está disponível para oferecer suporte eficiente e rápido a todas as suas necessidades. </p>
-    </div>
 
     <main>
         @yield('content')

@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->integer('contacto')->unique();
+            $table->string('nome', 255);
+            $table->string('contacto', 9)->unique();
             $table->string('email')->unique();
+            $table->softDeletes(); // Remoção
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('contactos');

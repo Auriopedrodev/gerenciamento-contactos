@@ -1,20 +1,11 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 use App\Http\Controllers\ContactoController;
 
-Route::get('/', [ContactoController::class, 'index']);
-
-Route::get('/criarContacto', [ContactoController::class, 'criarContacto']);
+Route::get('/', [ContactoController::class, 'index'])->name('contactos.index');
+Route::get('/criarContacto', [ContactoController::class, 'criarContacto'])->name('contactos.create');
+Route::post('/contactos', [ContactoController::class, 'store'])->name('contactos.store');
+Route::get('/contactos/{id}/edit', [ContactoController::class, 'edit'])->name('contactos.edit');
+Route::put('/contactos/{id}', [ContactoController::class, 'update'])->name('contactos.update');
+Route::delete('/contactos/{id}', [ContactoController::class, 'destroy'])->name('contactos.destroy');
+Route::get('/contactos/{id}', [ContactoController::class, 'show'])->name('contactos.show');
